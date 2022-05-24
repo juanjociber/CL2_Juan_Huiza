@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DAWI_CL2_HUIZA_JUAN/src/main/resources/templates/crudlibroshuiza&apos; to &apos;crudlibroshuiza.html&apos;" description="Rename resource &apos;crudlibroshuiza&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/crudlibroshuiza" name="crudlibroshuiza.html" stamp="1653361647564" updateReferences="true"/>
+</session>

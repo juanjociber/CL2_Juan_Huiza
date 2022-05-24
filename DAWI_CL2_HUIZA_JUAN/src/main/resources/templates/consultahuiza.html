@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>CL2 Juan Huiza Huiza</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center text-uppercase font-weight-bold text-secondary">Listado de Libros</h1  >
+	   	<!--Listado-->	
+		<table class="table">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">Código</th>
+		      <th scope="col">Nombre</th>
+		      <th scope="col">Editorial</th>
+		      <th scope="col">Fecha Publicación</th>
+		      <th scope="col">Autor</th>
+		      <th scope="col">Género</th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="l : ${lstLibros}">
+				<th scope="row" th:text="${l.cod_libro}"></th>
+					<td th:text="${l.nom_libro}"></td>
+					<td th:text="${l.editorial_libro}"></td>
+					<td th:text="${l.fecha_publi}"></td>
+					<td th:text="${l.autor.nom_autor}"></td>
+					<td th:text="${l.genero.nombre_genero}"></td>
+					<td>
+		      			<form action="/libro/seleccionar" method="post">
+		      				<input type="hidden" name="cod_libro" th:value="${l.cod_libro}">
+							<button type="submit" class="btn btn-primary text-uppercase font-weight-light">Seleccione</button>
+						</form>
+		      		</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div> 
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+</html>

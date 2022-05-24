@@ -1,0 +1,5 @@
+package org.cl2_juanhuiza.repository;
+
+public interface IAutoresRepository {
+
+}

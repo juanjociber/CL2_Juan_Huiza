@@ -1,0 +1,25 @@
+package org.cl2_juanhuiza.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Table(name="tb_generos")
+@Data
+public class Genero {
+
+	@Id
+	@Column(name="cod_genero")
+	private int codigo;
+	
+	@Column(name="nombre_genero")
+	private String nombre;
+	
+	@Column(name="sub_genero")
+	private String subgenero;
+	
+}
