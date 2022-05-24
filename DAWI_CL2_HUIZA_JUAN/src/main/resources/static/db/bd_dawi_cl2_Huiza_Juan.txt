@@ -1,0 +1,43 @@
+Create database Create database cl2_juanhuiza;
+
+Create table tb_autores(
+cod_autor  int not null primary key,
+nom_autor varchar(15),
+fna_autor  date
+);
+create table tb_generos(
+cod_genero		int,
+nombre_genero	varchar(20),
+sub_genero		varchar(20),
+primary key (cod_genero)
+);
+
+create table tb_libros(
+cod_libro	int auto_increment primary key,
+nom_libro	varchar(50),
+editorial_libro	varchar(50),
+fecha_publi	date,
+cod_autor	int,
+cod_genero int,
+constraint fk_autor foreign key (cod_autor) references tb_autores(cod_autor),
+constraint fk_genero foreign key (cod_genero) references tb_generos(cod_genero)
+);
+
+insert into tb_autores values (1,'Sofocles','1950-08-13');
+insert into tb_autores values (2,'Pablo Neruda','1900-05-01');
+insert into tb_autores values (3,'Lidoly Chávez','1800-02-10');
+insert into tb_autores values (4,'Mario Morenza','1750-02-01');
+
+insert into tb_generos values (1,'Narrativo','Novela');
+insert into tb_generos values (2,'Narrativo','Cuento');
+insert into tb_generos values (3,'Lírico','Elegía');
+insert into tb_generos values (4,'Lírico','Soneto');
+
+insert into tb_libros values(null,'Edipo Rey','Colmena Editores','1980-01-02',1,3);
+insert into tb_libros values(null,'Crepusculario','Editorial Ambar','1980-01-02',2,4);
+insert into tb_libros values(null,'Delete','Editorial Futura','1980-01-02',3,2);
+insert into tb_libros values(null,'Vitrum','Editorial Macro','1980-01-02',4,1);
+
+select * from tb_generos;
+select * from tb_autores;
+select * from tb_libros;
